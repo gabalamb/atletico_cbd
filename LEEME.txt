@@ -1,0 +1,4 @@
+1) Sube esta carpeta a un repositorio de GitHub.
+2) En Netlify: Add new site > Import an existing project > elige el repositorio.
+3) Site configuration > Environment variables: crea ADMIN_PASSWORD con TU contraseña.
+4) Deploy. Abre la web, pulsa "Admin" arriba a la izquierda y entra con esa contraseña.

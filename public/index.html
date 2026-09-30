@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atlético CBD</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--panel:#0b1a10;--line:#1d4a2a;--green:#2fd45a;--deep:#0f5c2a;--gold:#f5b100;--text:#eef5ee;--mute:#9db5a2;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 Barlow,system-ui,sans-serif;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='900'%3E%3Cg fill='none' stroke='%232fd45a' stroke-width='14' stroke-linecap='round' opacity='.22'%3E%3Cpath d='M40 0C120 140 -20 260 80 420S220 640 120 900'/%3E%3Cpath d='M420 0C330 160 520 300 420 470S300 700 400 900'/%3E%3Cpath d='M560 120C500 260 620 380 540 560'/%3E%3C/g%3E%3Cg fill='none' stroke='%230f5c2a' stroke-width='30' stroke-linecap='round' opacity='.5'%3E%3Cpath d='M230 0C170 200 300 330 220 520S160 760 250 900'/%3E%3C/g%3E%3C/svg%3E");background-size:600px 900px}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;font-style:italic;font-weight:800;line-height:1.05;margin:0}
+h2{font-size:clamp(34px,6vw,52px);color:var(--gold);margin-bottom:24px}
+h3{font-size:24px}
+a{color:inherit}
+.hero{text-align:center;padding:36px 16px 20px}
+.hero img{width:min(300px,68vw);height:auto;border-radius:18px;box-shadow:0 0 60px rgba(47,212,90,.35)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(0,0,0,.92);border-top:3px solid var(--gold);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:8px 12px;justify-content:safe center}
+nav a{flex:none;text-decoration:none;font:800 italic 20px 'Barlow Condensed',sans-serif;padding:8px 16px;border-radius:8px;color:var(--text)}
+nav a:hover,nav a.on{background:var(--green);color:#03150a}
+nav a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+section{display:none;max-width:980px;margin:0 auto;padding:48px 20px 72px;min-height:55vh}
+section.on{display:block;animation:in .3s ease}
+@keyframes in{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){section.on{animation:none}}
+.intro{font-size:22px;max-width:34ch}
+.intro strong{color:var(--green)}
+.next{margin-top:28px;background:var(--gold);color:#1a1200;border-radius:14px;padding:22px 24px;max-width:460px;clip-path:polygon(0 0,100% 0,100% 82%,92% 100%,0 100%)}
+.next small{font-weight:600}
+.next h3{font-size:34px;margin-top:4px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--green);border-radius:10px;padding:20px}
+.card small{color:var(--mute)}
+.card p{margin:8px 0 0;color:#cfe0d2}
+.match{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:12px}
+.match .r{font:800 italic 30px 'Barlow Condensed',sans-serif;padding:2px 16px;border-radius:6px;background:var(--deep)}
+.match .r.w{background:var(--green);color:#03150a}.match .r.l{background:#5b1616}.match .r.p{background:var(--gold);color:#1a1200}
+.match span:last-child{text-align:right}.match small{display:block;color:var(--mute)}
+.pl{position:relative;text-align:center;padding:26px 12px 16px}
+.pl b{display:block;font:800 italic 64px/1 'Barlow Condensed',sans-serif;color:var(--deep);-webkit-text-stroke:2px var(--green)}
+.pl div{font-weight:600;margin-top:6px}.pl small{color:var(--mute)}
+.pics{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.pic{aspect-ratio:4/3;border-radius:10px;border:2px dashed var(--line);display:grid;place-items:center;color:var(--mute);background:linear-gradient(135deg,#06140b,#0f5c2a55)}
+.btn{display:inline-block;background:var(--green);color:#03150a;font:800 italic 22px 'Barlow Condensed',sans-serif;padding:12px 26px;border-radius:10px;text-decoration:none;margin:6px 8px 6px 0}
+.btn.g{background:var(--gold)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.duo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;border:3px solid var(--gold);display:block}
+.story{max-width:62ch;font-size:19px}
+footer{text-align:center;padding:30px 16px 40px;color:var(--mute);border-top:1px solid var(--line)}
+@media(max-width:560px){.match{grid-template-columns:1fr;text-align:center}.match span:last-child{text-align:center}}
+
+.adm{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:10px;z-index:20;font:800 italic 18px 'Barlow Condensed',sans-serif;background:var(--gold);color:#1a1200;border:0;border-radius:8px;padding:6px 14px;cursor:pointer}
+.ab{display:none}body.admin .ab{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.ab button,.mb button{font:600 15px Barlow,sans-serif;background:var(--deep);color:var(--text);border:1px solid var(--green);border-radius:8px;padding:6px 12px;cursor:pointer}
+.ab button:hover,.mb button:hover{background:var(--green);color:#03150a}
+.pic{position:relative;overflow:hidden;border:2px solid var(--gold)}.pic img{width:100%;height:100%;object-fit:cover;display:block}.pic .ab{position:absolute;left:8px;bottom:8px;margin:0}
+#md{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:30;display:none;align-items:center;justify-content:center;padding:16px}
+#md .bx{background:var(--panel);border:2px solid var(--gold);border-radius:12px;padding:20px;width:min(460px,100%);max-height:90vh;overflow:auto}
+#md label{display:block;margin:10px 0 4px;color:var(--mute);font-size:15px}
+#md input,#md textarea,#md select{width:100%;font:inherit;background:#000;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px}
+#md textarea{min-height:140px}.mb{display:flex;gap:8px;margin-top:16px;justify-content:flex-end}
+#ts{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);left:50%;transform:translateX(-50%);background:var(--green);color:#03150a;font-weight:600;padding:8px 18px;border-radius:20px;z-index:40;display:none}
+</style>
+</head>
+<body>
+<button class="adm" id="adm">Admin</button>
+<header class="hero"><img src="logo.jpg" alt="Escudo del Atlético CBD"></header>
+<nav id="nav"><a href="#inicio">Inicio</a><a href="#noticias">Noticias</a><a href="#partidos">Partidos</a><a href="#equipo">Equipo</a><a href="#historia">Historia</a><a href="#imagenes">Imágenes</a><a href="#contacto">Contacto</a></nav>
+<section id="inicio"><h2>Inicio</h2><p class="intro">Bienvenido a la casa del <strong>Atlético CBD</strong>. Aquí tienes los partidos, las noticias y la plantilla del equipo.</p><div id="next"></div><div class="ab"><button data-next>Editar próximo partido</button></div></section>
+<section id="noticias"><h2>Noticias</h2><div class="grid" id="news"></div><div class="ab"><button data-a="news">+ Añadir noticia</button></div></section>
+<section id="partidos"><h2>Partidos</h2><div id="matches"></div><div class="ab"><button data-a="matches">+ Añadir partido</button></div></section>
+<section id="equipo"><h2>Equipo</h2><div class="grid" id="players"></div><div class="ab"><button data-a="players">+ Añadir jugador</button></div></section>
+<section id="historia"><h2>Historia</h2><div class="duo"><img src="f1.jpg" alt="El equipo posando en el campo con la bandera del CBD"><img src="f2.jpg" alt="El equipo celebrando en el vestuario"></div><div id="hist"></div><div class="ab"><button data-hist>Editar texto</button></div></section>
+<section id="imagenes"><h2>Imágenes</h2><div class="pics" id="pics"></div><div class="ab"><button data-photo>+ Añadir fotos</button></div></section>
+<section id="contacto"><h2>Contacto</h2><p>¿Quieres jugar con nosotros o proponernos un partido? Escríbenos.</p><a class="btn" href="mailto:atleticocbd@gmail.com">atleticocbd@gmail.com</a><a class="btn g" href="https://www.instagram.com/atletico_cbd/" target="_blank" rel="noopener">@atletico_cbd</a></section>
+<footer>© 2026 Atlético CBD</footer>
+<div id="md"><div class="bx" id="bx"></div></div><div id="ts"></div><input type="file" id="fi" accept="image/*" multiple hidden>
+<script>
+var SEED={next:{when:'Sábado 10:00',vs:'Rival FC',place:'Campo municipal'},
+news:[{date:'28 sep 2026',title:'Victoria en casa',text:'Escribe aquí el resumen del último partido.'},{date:'21 sep 2026',title:'Nuevo fichaje',text:'Presenta a los jugadores que se incorporan.'}],
+matches:[{round:'Jornada 1',home:'Atlético CBD',score:'0 - 1',away:'Racing Sur',res:'l'}],
+players:[{num:'1',name:'Nombre del portero',pos:'Portero'},{num:'9',name:'Nombre del delantero',pos:'Delantero'}],photos:[],
+history:'Somos el club Atlético CBD, fundado en 2025 por un grupo de futbolistas profesionales retirados por culpa de las mujeres, el alcohol, el tabaco y los vicios. En 1953 llegamos a la primera división española consiguiendo un doblete histórico: La Desliga y la Supercopa de Nuit, uno de los hitos más estudiados por los vagabundos.\n\nNuestro equipo tiene bastante clase a la hora de beber, porque a la hora de jugar parece el plato del Salvame.\n\nDesde aquí le mandamos un saludo a todos los que juegan contra nosotros, y que le den por culo a Pedro Sánchez.'};
+var F={news:[['date','Fecha'],['title','Título'],['text','Texto','a']],matches:[['round','Jornada'],['home','Local'],['score','Marcador (ej. 3 - 1)'],['away','Visitante'],['res','Resultado del Atlético CBD','s']],players:[['num','Dorsal'],['name','Nombre'],['pos','Posición']],next:[['when','Cuándo'],['vs','Rival'],['place','Lugar']],hist:[['t','Texto (una línea en blanco entre párrafos)','a']]};
+var D=SEED,T='',$=function(i){return document.getElementById(i)};
+try{T=sessionStorage.getItem('cbdT')||''}catch(e){}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function ctl(k,i){return '<div class="ab"><button data-e="'+k+':'+i+'">Editar</button><button data-d="'+k+':'+i+'">Borrar</button></div>'}
+function render(){var n=D.next||{};
+$('next').innerHTML='<div class="next"><small>Próximo partido · '+esc(n.when)+'</small><h3>Atlético CBD vs. '+esc(n.vs)+'</h3><small>'+esc(n.place)+'</small></div>';
+$('news').innerHTML=(D.news||[]).map(function(x,i){return '<article class="card"><small>'+esc(x.date)+'</small><h3>'+esc(x.title)+'</h3><p>'+esc(x.text)+'</p>'+ctl('news',i)+'</article>'}).join('');
+$('matches').innerHTML=(D.matches||[]).map(function(m,i){return '<div class="match"><span>'+esc(m.home)+'<small>'+esc(m.round)+'</small>'+ctl('matches',i)+'</span><span class="r '+esc(m.res)+'">'+esc(m.score)+'</span><span>'+esc(m.away)+'</span></div>'}).join('');
+$('players').innerHTML=(D.players||[]).map(function(p,i){return '<div class="card pl"><b>'+esc(p.num)+'</b><div>'+esc(p.name)+'</div><small>'+esc(p.pos)+'</small>'+ctl('players',i)+'</div>'}).join('');
+$('hist').innerHTML=String(D.history||'').split(/\n\s*\n/).map(function(t){return '<p class="story">'+esc(t)+'</p>'}).join('');
+$('pics').innerHTML=(D.photos||[]).map(function(s,i){return '<div class="pic"><img src="'+esc(s)+'" alt="Foto del equipo"><div class="ab"><button data-p="'+i+'">Borrar</button></div></div>'}).join('')||'<div class="pic" style="border:2px dashed var(--line)">Aún no hay fotos</div>'}
+function toast(t){var e=$('ts');e.textContent=t;e.style.display='block';setTimeout(function(){e.style.display='none'},2200)}
+function save(){fetch('/api/content',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+T},body:JSON.stringify(D)}).then(function(r){if(r.status===401){out();toast('Sesión caducada: entra de nuevo');return}if(!r.ok)throw 0;toast('Guardado')}).catch(function(){toast('No se pudo guardar')})}
+function done(){render();save()}
+function modal(html){$('bx').innerHTML=html;$('md').style.display='flex'}
+function close(){$('md').style.display='none'}
+function form(k,v,cb){var fs=F[k];modal(fs.map(function(f,i){var val=v[f[0]]||'',c='<label for="f'+i+'">'+f[1]+'</label>';
+if(f[2]==='a')return c+'<textarea id="f'+i+'">'+esc(val)+'</textarea>';
+if(f[2]==='s')return c+'<select id="f'+i+'"><option value="w"'+(val==='w'?' selected':'')+'>Victoria</option><option value="p"'+(val==='p'?' selected':'')+'>Empate</option><option value="l"'+(val==='l'?' selected':'')+'>Derrota</option></select>';
+return c+'<input id="f'+i+'" value="'+esc(val)+'">'}).join('')+'<div class="mb"><button id="fc">Cancelar</button><button id="fs">Guardar</button></div>');
+$('fc').onclick=close;$('fs').onclick=function(){var o={};fs.forEach(function(f,i){o[f[0]]=$('f'+i).value});close();cb(o)}}
+function login(){modal('<label for="pw">Contraseña de administrador</label><input id="pw" type="password" autocomplete="current-password"><div class="mb"><button id="fc">Cancelar</button><button id="fs">Entrar</button></div>');
+$('pw').focus();$('fc').onclick=close;
+$('fs').onclick=function(){fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:$('pw').value})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){T=d.token;try{sessionStorage.setItem('cbdT',T)}catch(e){}close();on()}).catch(function(){toast('Contraseña incorrecta')})}}
+function on(){document.body.classList.add('admin');$('adm').textContent='Salir'}
+function out(){T='';try{sessionStorage.removeItem('cbdT')}catch(e){}document.body.classList.remove('admin');$('adm').textContent='Admin'}
+$('adm').onclick=function(){T?out():login()};
+document.addEventListener('click',function(ev){var t=ev.target,d=t.dataset||{},a;
+if(d.e){a=d.e.split(':');form(a[0],D[a[0]][a[1]],function(o){D[a[0]][a[1]]=o;done()})}
+else if(d.d){a=d.d.split(':');if(confirm('¿Borrar este elemento?')){D[a[0]].splice(a[1],1);done()}}
+else if(d.a){form(d.a,{},function(o){D[d.a][d.a==='news'?'unshift':'push'](o);done()})}
+else if('next' in d){form('next',D.next||{},function(o){D.next=o;done()})}
+else if('hist' in d){form('hist',{t:D.history},function(o){D.history=o.t;done()})}
+else if('photo' in d){$('fi').click()}
+else if(d.p){D.photos.splice(d.p,1);done()}});
+$('fi').onchange=function(){var fs=[].slice.call(this.files),self=this;D.photos=D.photos||[];
+Promise.all(fs.map(function(f){return new Promise(function(ok){var im=new Image();im.onload=function(){var s=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',.72))};im.onerror=function(){ok(null)};im.src=URL.createObjectURL(f)})})).then(function(r){r.forEach(function(x){if(x)D.photos.push(x)});self.value='';done()})};
+var links=[].slice.call(document.querySelectorAll('#nav a')),secs=[].slice.call(document.querySelectorAll('section'));
+function go(){var id=(location.hash||'#inicio').slice(1);if(!$(id))id='inicio';secs.forEach(function(s){s.classList.toggle('on',s.id===id)});links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id)});window.scrollTo(0,0)}
+window.addEventListener('hashchange',go);go();
+if(T)on();
+fetch('/api/content').then(function(r){return r.json()}).then(function(d){if(d&&Object.keys(d).length)D=d}).catch(function(){}).then(render);
+render();
+</script>
+</body>
+</html>
